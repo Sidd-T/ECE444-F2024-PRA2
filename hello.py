@@ -9,7 +9,7 @@ app = Flask( __name__ )
 app.config['SECRET_KEY'] = 'hard to guess string'
 
 def validate_uoft_email(form, field):
-    if not re.search('utoronto', field.data):
+    if not re.search('utoronto.ca$', field.data):
         raise ValidationError("Please Use a UofT Email")
 
 class NameForm(FlaskForm):
